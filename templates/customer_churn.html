@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='churn.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">👤Customer Churn Prediction</div>
+
+        <a href="/" class="dashboard-btn">
+            ← Back to Dashboard
+        </a>
+    </nav>
+
+    <div class="main-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="info-card">
+
+            <h1>👤Customer Churn Prediction</h1>
+
+            <p>
+                Predict whether a customer is likely
+                to leave the company based on customer
+                profile and account information.
+            </p>
+
+            <hr>
+
+            <h3>How it Works?</h3>
+
+            <ul>
+                <li>Enter customer information.</li>
+                <li>Click Predict Churn.</li>
+                <li>The model analyzes the data.</li>
+                <li>Get churn prediction instantly.</li>
+            </ul>
+            <h3>Model Details</h3>
+
+<div class="model-details">
+
+    <div class="detail-box">
+        <h4>Algorithm</h4>
+        <p>Linear Regression</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Problem Type</h4>
+        <p>Classification</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Features Used</h4>
+        <p>5 Inputs</p>
+    </div>
+
+</div>
+
+            <div class="note-box">
+
+                <strong> Model Information</strong>
+
+                <p>
+                    This model predicts whether a customer
+                    is likely to stay with the company
+                    or leave (churn).
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="form-card">
+
+            <h2>Enter Customer Details</h2>
+
+            <form action="/churn" method="POST">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select name="v1" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Senior Citizen</label>
+                        <select name="v2" required>
+                            <option value="">Select</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Partner</label>
+                        <select name="v3" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dependents</label>
+                        <select name="v4" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tenure (Months)</label>
+                        <input type="number" name="v5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Service</label>
+                        <select name="v6" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Multiple Lines</label>
+                        <select name="v7" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No phone service">No Phone Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Internet Service</label>
+                        <select name="v8" required>
+                            <option value="">Select</option>
+                            <option value="DSL">DSL</option>
+                            <option value="Fiber optic">Fiber Optic</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Online Security</label>
+                        <select name="v9" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No Internet Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Online Backup</label>
+                        <select name="v10" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No Internet Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Device Protection</label>
+                        <select name="v11" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No Internet Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tech Support</label>
+                        <select name="v12" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No Internet Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Streaming TV</label>
+                        <select name="v13" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No Internet Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Streaming Movies</label>
+                        <select name="v14" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="No internet service">No Internet Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contract Type</label>
+                        <select name="v15" required>
+                            <option value="">Select</option>
+                            <option value="Month-to-month">Month-to-month</option>
+                            <option value="One year">One Year</option>
+                            <option value="Two year">Two Year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Paperless Billing</label>
+                        <select name="v16" required>
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select name="v17" required>
+                            <option value="">Select</option>
+                            <option value="Electronic check">Electronic Check</option>
+                            <option value="Mailed check">Mailed Check</option>
+                            <option value="Bank transfer (automatic)">Bank Transfer</option>
+                            <option value="Credit card (automatic)">Credit Card</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Monthly Charges</label>
+                        <input type="number" step="0.01" name="v18" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total Charges</label>
+                        <input type="number" step="0.01" name="v19" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="predict-btn">
+                    Predict Churn
+                </button>
+
+            </form>
+            {% if sales %}
+
+            <div class="result-card">
+
+                <h3>Prediction Result</h3>
+
+                <h1>{{ sales }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

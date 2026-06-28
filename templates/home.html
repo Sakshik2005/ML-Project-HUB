@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Projects Hub</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ML <span>Projects Hub</span></div>
+        <div>Data Science Portfolio Project</div>
+    </nav>
+
+    <section class="hero">
+
+        <h1>Machine Learning Projects Dashboard</h1>
+
+        <p>
+            Explore multiple Machine Learning projects in one place.
+            Predict house prices, customer churn, diabetes risk and
+            many more using trained Machine Learning models.
+        </p>
+
+    </section>
+
+    <div class="container">
+
+        <h2 class="section-title">Prediction Projects</h2>
+
+        <div class="projects">
+
+            <div class="card">
+                <div class="icon">🏠</div>
+                <h2>House Price Prediction</h2>
+                <p>
+                    Predict house prices using location,
+                    area and number of rooms.
+                </p>
+                <a href="/house" class="btn">
+                    Open Project
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon">👤</div>
+                <h2>Customer Churn Prediction</h2>
+                <p>
+                    Predict whether a customer will
+                    stay or leave the company.
+                </p>
+                <a href="/churn" class="btn">
+                    Open Project
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon">🩺</div>
+                <h2>Diabetes Prediction</h2><br>
+                <p>
+            
+                    Predict diabetes risk using
+                    health parameters.
+                </p>
+                <a href="/diabetes" class="btn">
+                    Open Project
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon">🛒 </div>
+                <h2>Big Mart Sales Prediction</h2><br>
+                <p>
+                    Estimate product sales based on 
+                    item characteristics and store information.
+                </p>
+                <a href="/bigmart" class="btn">
+                    Open Project
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎓</div>
+                <h2>Admission Prediction</h2><br>
+                <p>
+                    Predict admission chances using academic
+                    scores and student profile details.
+                </p>
+                <a href="/admission" class="btn">
+                    Open Project
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Technologies Used Section -->
+
+        <section class="tech-section">
+
+            <h2 class="section-title">Technologies Used</h2>
+
+            <div class="tech-grid">
+
+                <div class="tech-card">Python</div>
+                <div class="tech-card">Flask</div>
+                <div class="tech-card">Scikit-Learn</div>
+                <div class="tech-card">Pandas</div>
+                <div class="tech-card">NumPy</div>
+                <div class="tech-card">HTML5</div>
+                <div class="tech-card">CSS3</div>
+                <div class="tech-card">Machine Learning</div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 ML Prediction Hub | Developed by Sakshi
+    </footer>
+
+</body>
+</html>

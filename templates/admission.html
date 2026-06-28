@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='house.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Admission Prediction
+        </div>
+
+        <a href="/" class="dashboard-btn">
+            ← Back to Dashboard
+        </a>
+
+    </nav>
+
+    <div class="main-container">
+
+        <!-- LEFT SECTION -->
+
+        <div class="info-card">
+
+            <h1>🎓 Admission Prediction</h1>
+
+            <p>
+                Predict the chances of university admission
+                using academic scores and student profile details.
+            </p>
+
+
+            <hr>
+
+            <h3>How it Works?</h3>
+
+            <ul>
+                <li>Enter academic details.</li>
+                <li>Provide university profile information.</li>
+                <li>Click Predict Admission.</li>
+                <li>Get the admission prediction instantly.</li>
+            </ul>
+
+            <h3>Model Details</h3>
+
+            <div class="model-details">
+
+                <div class="detail-box">
+                    <h4>Algorithm</h4>
+                    <p>SVM</p>
+                </div>
+
+                <div class="detail-box">
+                    <h4>Problem Type</h4>
+                    <p>Prediction</p>
+                </div>
+
+                <div class="detail-box">
+                    <h4>Features</h4>
+                    <p>7 Inputs</p>
+                </div>
+
+            </div>
+
+            <div class="note-box">
+
+                <strong> Model Information</strong>
+
+                <p>
+                    This model predicts admission outcomes
+                    based on academic performance and research profile.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SECTION -->
+
+        <div class="form-card">
+
+            <h2>Enter Student Details</h2>
+
+            <form action="/admission" method="POST">
+
+                <input type="number"
+                       name="v1"
+                       placeholder="GRE Score"
+                       required>
+
+                <input type="number"
+                       name="v2"
+                       placeholder="TOEFL Score"
+                       required>
+
+                <input type="number"
+                       name="v3"
+                       placeholder="University Rating"
+                       required>
+
+                <input type="number"
+                       step="0.1"
+                       name="v4"
+                       placeholder="SOP Rating"
+                       required>
+
+                <input type="number"
+                       step="0.1"
+                       name="v5"
+                       placeholder="LOR Rating"
+                       required>
+
+                <input type="number"
+                       step="0.01"
+                       name="v6"
+                       placeholder="CGPA"
+                       required>
+
+                <select name="v7" required>
+                    <option value="">Research Experience</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <button type="submit">
+                    Predict Admission
+                </button>
+
+            </form>
+
+            {% if result %}
+
+            <div class="result-card">
+
+                <h3>Prediction Result</h3>
+
+                <h1>{{ result }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#1e293b;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#1e293b;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    color:#64748b;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* Container */
+
+.container{
+    flex:1;
+    width:90%;
+    margin:auto;
+    margin-bottom:80px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#1e293b;
+    font-size:36px;
+}
+
+/* Cards */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 24px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+.tech-section{
+    margin-top:80px;
+    text-align:center;
+}
+
+.tech-section h2{
+    color:#1e293b;
+    margin-bottom:30px;
+}
+
+.tech-grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.tech-card{
+    background:white;
+    padding:15px 30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    font-weight:600;
+}
+
+/* Footer */
+
+footer{
+    background:#1e293b;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+}

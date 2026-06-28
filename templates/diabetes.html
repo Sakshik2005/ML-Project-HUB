@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='house.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🩺 Diabetes Prediction</div>
+
+        <a href="/" class="dashboard-btn">
+            ← Back to Dashboard
+        </a>
+    </nav>
+
+    <div class="main-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="info-card">
+
+            <h1>🩺 Diabetes Prediction</h1>
+
+            <p>
+                Predict the likelihood of diabetes using
+                medical measurements and patient health data.
+            </p>
+
+            <hr>
+
+            <h3>How it Works?</h3>
+
+            <ul>
+                 <li>Enter patient information.</li>
+                <li>Click Predict Diabetes.</li>
+                <li>The model analyzes the health data.</li>
+                <li>Get prediction instantly.</li>
+            </ul>
+            <h3>Model Details</h3>
+
+<div class="model-details">
+
+    <div class="detail-box">
+        <h4>Algorithm</h4>
+        <p>Logistic Regression</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Problem Type</h4>
+        <p>Classification</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Features Used</h4>
+        <p>8 Inputs</p>
+    </div>
+
+</div>
+
+            <div class="note-box">
+
+                <strong> Model Information</strong>
+
+                <p>
+                    This model predicts whether a patient
+                    is likely to have diabetes based on
+                    health-related measurements.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="form-card">
+
+            <h2>Enter Patient Details</h2>
+
+            <form action="/diabetes" method="POST">
+
+                <input type="number"
+                       name="v1"
+                       placeholder="Pregnancies"
+                       required>
+
+                <input type="number"
+                       name="v2"
+                       placeholder="Glucose"
+                       required>
+
+                <input type="number"
+                       name="v3"
+                       placeholder="Blood Pressure"
+                       required>
+         
+                <input type="number"
+                       name="v4"
+                       placeholder="Skin Thickness"
+                       required>
+
+                <input type="number"
+                       name="v5"
+                       placeholder="Insulin"
+                       required>
+
+                <input type="number"
+                       step="0.01"
+                       name="v6"
+                       placeholder="BMI"
+                       required>
+
+                <input type="number"
+                       step="0.001"
+                       name="v7"
+                       placeholder="Diabetes Pedigree Function"
+                       required>
+
+                <input type="number"
+                       name="v8"
+                       placeholder="Age"
+                       required>
+
+                <button type="submit">
+                    Predict Diabetes
+                </button>
+
+            </form>
+
+            {% if result %}
+
+            <div class="result-card">
+
+                <h3>Prediction Result</h3>
+
+                <h1>{{ result }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

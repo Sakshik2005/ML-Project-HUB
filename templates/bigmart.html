@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Mart Sales Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='house.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛒 Big Mart Sales Prediction
+        </div>
+
+        <a href="/" class="dashboard-btn">
+            ← Back to Dashboard
+        </a>
+
+    </nav>
+
+    <div class="main-container">
+
+        <!-- LEFT SECTION -->
+
+        <div class="info-card">
+
+            <h1>🛒 Big Mart Sales Prediction</h1>
+
+            <p>
+                Predict product sales based on item
+                characteristics and outlet information
+                using Machine Learning.
+            </p>
+
+            <hr>
+
+            <h3>How it Works?</h3>
+
+            <ul>
+                <li>Enter product details.</li>
+                <li>Provide outlet information.</li>
+                <li>Click Predict Sales.</li>
+                <li>Get estimated sales instantly.</li>
+            </ul>
+
+            <h3>Model Details</h3>
+
+            <div class="model-details">
+
+                <div class="detail-box">
+                    <h4>Algorithm</h4>
+                    <p>Linear Regression</p>
+                </div>
+
+                <div class="detail-box">
+                    <h4>Problem Type</h4>
+                    <p>Regression</p>
+                </div>
+
+                <div class="detail-box">
+                    <h4>Features</h4>
+                    <p>11 Inputs</p>
+                </div>
+
+            </div>
+
+            <div class="note-box">
+
+                <strong> Model Information</strong>
+
+                <p>
+                    This model predicts product sales
+                    using product attributes and
+                    outlet characteristics.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SECTION -->
+
+        <div class="form-card">
+
+            <h2>Enter Product Details</h2>
+
+            <form action="/bigmart" method="POST">
+
+                <input type="number" step="0.01"
+                       name="v1"
+                       placeholder="Item Identifier"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v2"
+                       placeholder="Item Weight"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v3"
+                       placeholder="Item Fat Content"
+                       required>
+
+                <input type="number" step="0.0001"
+                       name="v4"
+                       placeholder="Item Visibility"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v5"
+                       placeholder="Item Type"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v6"
+                       placeholder="Item MRP"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v7"
+                       placeholder="Outlet Identifier"
+                       required>
+
+                <input type="number"
+                       name="v8"
+                       placeholder="Outlet Establishment Year"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v9"
+                       placeholder="Outlet Size"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v10"
+                       placeholder="Outlet Location Type"
+                       required>
+
+                <input type="number" step="0.01"
+                       name="v11"
+                       placeholder="Outlet Type"
+                       required>
+
+                <button type="submit">
+                    Predict Sales
+                </button>
+
+            </form>
+
+            {% if sales %}
+
+            <div class="result-card">
+
+                <h3>Estimated Sales</h3>
+
+                <h1>₹ {{ "{:,.2f}".format(sales) }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

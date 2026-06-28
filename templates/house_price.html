@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='house.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🏠 House Price Prediction</div>
+
+        <a href="/" class="dashboard-btn">
+            ← Back to Dashboard
+        </a>
+    </nav>
+
+    <div class="main-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="info-card">
+
+            <h1>🏠 House Price Prediction</h1>
+
+            <p>
+                Predict house prices based on income,
+                house age, rooms, bedrooms and population
+                using a trained Machine Learning model.
+            </p>
+
+            <hr>
+
+            <h3>How it Works?</h3>
+
+            <ul>
+                <li>Enter all required details.</li>
+                <li>Click on Predict Price.</li>
+                <li>The model analyzes the data.</li>
+                <li>Get estimated house price instantly.</li>
+            </ul>
+            <h3>Model Details</h3>
+
+<div class="model-details">
+
+    <div class="detail-box">
+        <h4>Algorithm</h4>
+        <p>Linear Regression</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Problem Type</h4>
+        <p>Regression</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Features Used</h4>
+        <p>5 Inputs</p>
+    </div>
+
+</div>
+
+            <div class="note-box">
+
+                <strong> Model Information</strong>
+
+                <p>
+                    This model is trained using housing data
+                    and predicts property prices using
+                    Linear Regression.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="form-card">
+
+            <h2>Enter House Details</h2>
+
+            <form action="/house" method="POST">
+
+                <input type="number"
+                       name="v1"
+                       placeholder="Avg. Area Income"
+                       required>
+
+                <input type="number"
+                       name="v2"
+                       placeholder="Avg. Area House Age"
+                       required>
+
+                <input type="number"
+                       name="v3"
+                       placeholder="Avg. Area Number of Rooms"
+                       required>
+
+                <input type="number"
+                       name="v4"
+                       placeholder="Avg. Area Number of Bedrooms"
+                       required>
+
+                <input type="number"
+                       name="v5"
+                       placeholder="Area Population"
+                       required>
+
+                <button type="submit">
+                    Predict Price
+                </button>
+
+            </form>
+
+            {% if price %}
+
+            <div class="result-card">
+
+                <h3>Estimated House Price</h3>
+
+                <h1>₹ {{ "{:,.0f}".format(price) }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
