@@ -6,21 +6,24 @@
 }
 
 body{
-    background:#f4f7fc;
-    display:flex;
-    flex-direction:column;
+    background:#f8fafc;
     min-height:100vh;
 }
 
-/* Navbar */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
-    background:#1e293b;
+    background:#0f172a;
     color:white;
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
@@ -32,44 +35,140 @@ body{
     color:#38bdf8;
 }
 
-/* Hero */
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     text-align:center;
-    padding:80px 20px;
+    padding:90px 20px 70px;
+}
+
+.welcome-badge{
+    display:inline-block;
+    background:#dbeafe;
+    color:#2563eb;
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:600;
+    margin-bottom:25px;
 }
 
 .hero h1{
-    font-size:48px;
-    color:#1e293b;
+    font-size:60px;
+    color:#0f172a;
     margin-bottom:20px;
+    line-height:1.2;
+}
+
+.hero h1 span{
+    color:#2563eb;
 }
 
 .hero p{
-    max-width:800px;
+    max-width:850px;
     margin:auto;
     color:#64748b;
     font-size:18px;
     line-height:1.8;
 }
 
-/* Container */
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-box{
+    max-width:700px;
+    margin:40px auto 0;
+    display:flex;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.search-box input{
+    flex:1;
+    padding:18px;
+    border:none;
+    outline:none;
+    font-size:15px;
+}
+
+.search-box button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:0 30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-section{
+    width:90%;
+    margin:0 auto 80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.feature-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+}
+
+.feature-card h3{
+    margin:15px 0;
+    color:#0f172a;
+}
+
+.feature-card p{
+    color:#64748b;
+}
+
+/* =========================
+   PROJECT SECTION
+========================= */
 
 .container{
-    flex:1;
     width:90%;
     margin:auto;
-    margin-bottom:80px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:40px;
-    color:#1e293b;
-    font-size:36px;
+    font-size:38px;
+    color:#0f172a;
+    margin-bottom:50px;
 }
-
-/* Cards */
 
 .projects{
     display:grid;
@@ -81,7 +180,7 @@ body{
     background:white;
     padding:30px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
     transition:0.3s;
 }
 
@@ -90,18 +189,18 @@ body{
 }
 
 .icon{
-    font-size:45px;
+    font-size:55px;
     margin-bottom:15px;
 }
 
 .card h2{
-    margin-bottom:15px;
     color:#0f172a;
+    margin-bottom:15px;
 }
 
 .card p{
     color:#64748b;
-    line-height:1.8;
+    line-height:1.7;
     margin-bottom:20px;
 }
 
@@ -110,23 +209,55 @@ body{
     text-decoration:none;
     background:#2563eb;
     color:white;
-    padding:12px 24px;
+    padding:12px 25px;
     border-radius:10px;
     transition:0.3s;
+    font-weight:600;
 }
 
 .btn:hover{
     background:#1d4ed8;
 }
 
-.tech-section{
-    margin-top:80px;
-    text-align:center;
+/* =========================
+   STATS
+========================= */
+
+.stats-section{
+    width:90%;
+    margin:90px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
 }
 
-.tech-section h2{
-    color:#1e293b;
-    margin-bottom:30px;
+.stat-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.stat-box h2{
+    color:#2563eb;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.stat-box p{
+    color:#64748b;
+    font-weight:500;
+}
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-section{
+    width:90%;
+    margin:0 auto 80px;
+    text-align:center;
 }
 
 .tech-grid{
@@ -140,33 +271,56 @@ body{
     background:white;
     padding:15px 30px;
     border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
     font-weight:600;
+    transition:0.3s;
 }
 
-/* Footer */
+.tech-card:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#1e293b;
+    background:#0f172a;
     color:white;
     text-align:center;
     padding:25px;
+    margin-top:50px;
 }
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
     .navbar{
         flex-direction:column;
-        gap:10px;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .hero h1{
-        font-size:32px;
+        font-size:38px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box button{
+        padding:15px;
     }
 
     .section-title{
-        font-size:28px;
+        font-size:30px;
     }
 }
